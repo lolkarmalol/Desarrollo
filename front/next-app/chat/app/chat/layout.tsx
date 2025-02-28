@@ -1,3 +1,4 @@
+import { AplicacionContext } from "@/context/AppContext";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 
@@ -24,7 +25,9 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <AplicacionContext value={""}>
         {children}
+        </AplicacionContext>
       </body>
     </html>
   );
